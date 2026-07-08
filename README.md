@@ -65,7 +65,17 @@ npm install          # pulls playwright (used by URL → Figma). Core chat/edit 
 ```
 *(Prefer no git? Use the green **Code → Download ZIP** button, unzip, then `cd` in.)*
 
-**2. Start the relay**
+**2. Make it always-on (recommended)**
+
+Register the relay to **auto-start at login** — and auto-restart if it ever crashes — so you never have to keep a terminal open. Run this **once**:
+```bash
+node setup.js
+# ✅ registers login auto-start (macOS LaunchAgent / Windows Startup) and starts it now
+```
+- **Check status:** `node setup.js --status`
+- **Uninstall (stop auto-start):** `node setup.js --uninstall` — removes only the registration; fully reversible, nothing else touched.
+
+Prefer to just run it yourself once, without auto-start? That works too:
 ```bash
 node relay.js
 # ▲ Mothership relay  →  http://localhost:4575
@@ -104,7 +114,7 @@ In the panel chat: *"make a simple 3-plan pricing table."* Claude edits the sour
 
 | Symptom | Fix |
 |---|---|
-| Plugin shows **"waiting for relay…"** | The relay isn't running. In this folder: `node relay.js`. |
+| Plugin shows **"waiting for relay…"** | The relay isn't running. In this folder: `node setup.js --status` to check; if it's not running, `node setup.js` (or a one-off `node relay.js`). |
 | **`⚠️ claude CLI not found`** on startup | Install & log in to Claude Code (Pro/Max): https://claude.com/claude-code — then re-run `node relay.js`. |
 | Build / edit fails with **"claude not found"** | Same as above — `claude` must be in your PATH and logged in. |
 | **Port 4575 in use** | Quit the other relay, or free the port. Only one relay is needed. |
