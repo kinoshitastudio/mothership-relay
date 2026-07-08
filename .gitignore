@@ -1,0 +1,14 @@
+# 私物・作業データ（公開しない / never publish personal work）
+mothership.json
+library/*.json
+!library/.gitkeep
+_chat-log.json
+_chat-ref.*
+refs/
+
+# 依存・生成物 / deps & build artifacts
+node_modules/
+
+# ローカル設定・OS / local config & OS
+.claude/
+.DS_Store

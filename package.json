@@ -1,0 +1,15 @@
+{
+  "name": "mothership-relay",
+  "version": "2.0.0",
+  "description": "Local relay for Mothership — bridges the Figma plugin to your own Claude Code (Pro/Max). Chat to build, tidy & edit real Figma nodes.",
+  "main": "relay.js",
+  "scripts": {
+    "start": "node relay.js"
+  },
+  "keywords": ["figma", "figma-plugin", "claude-code", "design-system", "mothership", "kinoshita-studio"],
+  "author": "Kinoshita Studio",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.61.1"
+  }
+}
